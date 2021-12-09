@@ -1,7 +1,10 @@
-package com.hibernate.hibernate_prueba;
+package com.add.CRUD;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
+import com.hibernate.hibernate_prueba.HibernateUtil;
+import com.hibernate.hibernate_prueba.Libro;
 
 public class Biblioteca {
 	public static void main(String[] args) {

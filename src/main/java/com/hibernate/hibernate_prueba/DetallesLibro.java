@@ -26,6 +26,9 @@ public class DetallesLibro {
 	}
 
 	@Id
+	@GeneratedValue(generator = "foreigngen")
+    @GenericGenerator(strategy = "foreign", name="foreigngen",
+            parameters = @Parameter(name = "property", value="libro"))
     @Column(name = "ID_LIBRO")
 	public long getId() {
 		return id;

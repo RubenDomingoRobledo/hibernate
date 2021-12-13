@@ -5,6 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
@@ -12,12 +13,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name="LIBRO")
 public class Libro {
-	int id;
+	private long id;
 	@Column
-	String titulo;
+	private String titulo;
 	@Column
-	String descripcion;
-	DetallesLibro detallesLibro;
+	private String descripcion;
+	private DetallesLibro detallesLibro;
+	private Autor autor;
 	
 	public Libro() {
 		super();
@@ -26,11 +28,11 @@ public class Libro {
 	@Id
     @GeneratedValue
     @Column(name = "ID_LIBRO")
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	
@@ -42,6 +44,16 @@ public class Libro {
 	
 	public void setDetallesLibro(DetallesLibro detallesLibro) {
 		this.detallesLibro = detallesLibro;
+	}
+	
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ID_AUTOR")
+	public Autor getAutor(){
+		return autor;
+	}
+	
+	public void setAutor(Autor autor) {
+		this.autor = autor;
 	}
 
 	public String getTitulo() {

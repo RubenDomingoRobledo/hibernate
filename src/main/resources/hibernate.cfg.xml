@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
                                          "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
- <session-factory>
+ <session-factory name="">
   <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
   <property name="hibernate.connection.password">root</property>
   <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate</property>
@@ -15,5 +15,7 @@
   <mapping class="com.hibernate.hibernate_prueba.Libro"/>
   <mapping class="com.hibernate.hibernate_prueba.DetallesLibro"/>
   <mapping class="com.hibernate.hibernate_prueba.Autor"/>
+  <mapping class="com.add.one_to_many_relation.Botella_leche"/>
+  <mapping class="com.add.one_to_many_relation.Categoria"/>
  </session-factory>
 </hibernate-configuration>
